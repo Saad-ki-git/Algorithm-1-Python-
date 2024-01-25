@@ -1,0 +1,27 @@
+# Time complexity is O(n) in worst case and O(1) in best case
+class QuickFind:
+    def __init__(self,n):
+      self.id = list(range(n))
+
+    def connect(self,p,q):
+      if self.id[p]==self.id[q]:
+        print(f'{p},{q} have same id [{self.id[p]}]')
+      else:
+        print(f'{p} has id [{self.id[p]}] and {q} has id [{self.id[q]}] which are different)
+      return ""
+      
+    def Union(self,p,q):
+      pid = self.id[p]
+      qid = self.id[q]
+      for i in range(len(self.id)):
+        if pid == self.id[i]:
+          self.id[i]= qid
+      return ""
+      
+instance = QuickFind(5)
+
+print(instance.connect(1,2))
+print(instance.Union(1,2))
+print(instance.connect(1,2))
+
+
