@@ -1,9 +1,10 @@
 # Time complexity is O(n) in worst case and O(1) in best case
 class QuickFind:
     def __init__(self,n):
-      self.id = list(range(n))
+      self.id = list(range(n)) 
 
     def connect(self,p,q):
+#check if id of both p,q matches 
       if self.id[p]==self.id[q]:
         print(f'{p},{q} have same id [{self.id[p]}]')
       else:
@@ -11,8 +12,10 @@ class QuickFind:
       return ""
       
     def Union(self,p,q):
+#make the id of p,q same through union  
       pid = self.id[p]
       qid = self.id[q]
+#run for loop for n amount of time
       for i in range(len(self.id)):
         if pid == self.id[i]:
           self.id[i]= qid
@@ -20,8 +23,8 @@ class QuickFind:
       
 instance = QuickFind(5)
 
-print(instance.connect(1,2))
-print(instance.Union(1,2))
-print(instance.connect(1,2))
+print(instance.connect(1,2)) #NO same Id
+print(instance.Union(1,2)) #Made union
+print(instance.connect(1,2)) #Now has same Id
 
 
