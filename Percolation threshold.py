@@ -1,3 +1,11 @@
+#What is monte Carlo Percolation Thresholds
+# To estimate the percolation threshold, consider the following computational experiment:
+# * Initialize all sites to be blocked.
+# * Repeat the following until the system percolates:
+# * Choose a site uniformly at random among all blocked sites.
+# * Open the site.
+# The fraction of sites that are opened when the system percolates provides an estimate of the percolation threshold.
+
 import random
 import statistics
 
